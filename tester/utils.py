@@ -7,7 +7,9 @@ def _get_mandrill():
 
 
 def get_templates():
-    pass
+    md = _get_mandrill()
+    tpls = md.templates.list()
+    return tpls
 
 
 def render_mandrill_template(slug, template_content=None, merge_vars=None):

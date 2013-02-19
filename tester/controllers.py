@@ -1,13 +1,16 @@
 # app is instanced in __init__.py; this gets it from there
 from . import app
-from .utils import render_mandrill_template
+from .utils import render_mandrill_template, get_templates
 from flask import render_template, request
 import json
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    data = {
+        "templates": get_templates()
+    }
+    return render_template("index.html", data=data)
 
 
 @app.route('/render/', methods=['POST'])

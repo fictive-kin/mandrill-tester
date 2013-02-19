@@ -4,9 +4,13 @@
 
 {% block body %}
 
-<form action="/render/" method="POST" target="_blank">
+<form action="/render/" method="POST" target="_blank" class="custom">
 	<label for="template-slug">Template slug</label>
-	<input type="text" name="template-slug" value="signup" placeholder="template-slug">
+	<select name="template-slug">
+	{% for tpl in data.templates %}
+		<option value="{{tpl.slug}}">{{tpl.slug}}</option>
+	{% endfor %}
+	</select>
 
 	<label for="template-content">Template Content (JSON)</label>
 	<textarea rows="10" name="template-content" value="" placeholder="[]">[]</textarea>
