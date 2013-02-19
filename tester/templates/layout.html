@@ -13,14 +13,14 @@
 
   <!-- Included CSS Files (Uncompressed) -->
   <!--
-  <link rel="stylesheet" href="static/stylesheets/foundation.css">
+  <link rel="stylesheet" href="/static/stylesheets/foundation.css">
   -->
 
   <!-- Included CSS Files (Compressed) -->
-  <link rel="stylesheet" href="static/stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="static/stylesheets/app.css">
+  <link rel="stylesheet" href="/static/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="/static/stylesheets/app.css">
 
-  <script src="static/javascripts/modernizr.foundation.js"></script>
+  <script src="/static/javascripts/modernizr.foundation.js"></script>
 
   {% block custom_head %}{% endblock %}
 
@@ -41,10 +41,12 @@
   </div>
 
   <!-- Included JS Files (Compressed) -->
-  <script src="static/javascripts/foundation.min.js"></script>
+  <script src="/static/javascripts/foundation.min.js"></script>
 
   <!-- Initialize JS Plugins -->
-  <script src="static/javascripts/app.js"></script>
+  <script src="/static/javascripts/app.js"></script>
+
+  {% block custom_footer %}{% endblock %}
 
 </body>
 </html>

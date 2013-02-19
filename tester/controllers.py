@@ -22,3 +22,9 @@ def render():
                                     template_content=template_content,
                                     merge_vars=merge_vars)
     return html
+
+
+@app.route('/template/<slug>', methods=['GET'])
+def template_get(slug):
+    template_obj = get_templates(slug=slug)
+    return render_template("template_view.html", template_obj=template_obj)

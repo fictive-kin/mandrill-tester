@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Template Viewer{% endblock %}
+
+{% block custom_head %}
+{% endblock %}
+
+{% block body %}
+
+<h3>{{template_obj.slug}}</h3>
+
+<p><em>Read-only!</em></p>
+
+<div id="template-viewer">
+<textarea id="templateHtml">{{template_obj.code|safe}}</textarea>
+</div>
+
+<!-- codemirror stuff -->
+<script src="/static/javascripts/codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="/static/javascripts/codemirror/lib/codemirror.css">
+<script src="/static/javascripts/codemirror/mode/javascript/javascript.js"></script>
+<script src="/static/javascripts/codemirror/mode/css/css.js"></script>
+<script src="/static/javascripts/codemirror/mode/xml/xml.js"></script>
+<script src="/static/javascripts/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="/static/javascripts/codemirror/addon/edit/matchbrackets.js"></script>
+<script>
+var opts = {
+	'mode':{
+		'name':'htmlmixed'
+	},
+	'lineNumbers':true,
+	'matchBrackets': true,
+	'readOnly': true,
+	'autofocus': true
+}
+var myCodeMirror1 = CodeMirror.fromTextArea(document.getElementById('templateHtml'), opts);
+</script>
+
+
+
+{% endblock %}

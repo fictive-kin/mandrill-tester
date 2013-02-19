@@ -9,11 +9,18 @@
 
 <form action="/render/" method="POST" target="_blank" class="custom">
 	<label for="template-slug">Template slug</label>
-	<select name="template-slug">
-	{% for tpl in data.templates %}
-		<option value="{{tpl.slug}}">{{tpl.slug}}</option>
-	{% endfor %}
-	</select>
+	<div class="row">
+		<div class="three columns">
+			<select name="template-slug" id="template-slug-select">
+			{% for tpl in data.templates %}
+				<option value="{{tpl.slug}}">{{tpl.slug}}</option>
+			{% endfor %}
+			</select>
+		</div>
+		<div class="three columns end"><a href="#" id="view-template" class="button small">View</a>
+		</div>
+	</div>
+
 
 	<label for="template-content">Template Content (JSON)</label>
 	<textarea name="template-content" id="templateContent" value="" placeholder="[]">[]</textarea>
@@ -28,6 +35,10 @@
 	<input type="submit" value="render" class="button radius">
 </form>
 
+{% endblock %}
+
+
+{% block custom_footer %}
 	<!-- codemirror stuff -->
 	<script src="static/javascripts/codemirror/lib/codemirror.js"></script>
 	<link rel="stylesheet" href="static/javascripts/codemirror/lib/codemirror.css">
@@ -43,6 +54,13 @@
 	var myCodeMirror2 = CodeMirror.fromTextArea(document.getElementById('mergeVars'), opts);
 	</script>
 
+	<script>
+	$(document).ready(function() {
+		$('#view-template').on('click', function(e) {
+			var slug = $('#template-slug-select').val();
+			var templateViewerWindow = window.open('/template/'+slug, 'templateViewerWindow');
+		})
+	})
 
-
+	</script>
 {% endblock %}

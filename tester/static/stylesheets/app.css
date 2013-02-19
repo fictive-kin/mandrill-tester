@@ -4,6 +4,14 @@ textarea {
 	font-family: monospace;
 }
 
+#template-viewer .CodeMirror {
+	min-height:400px;
+	height:100%;
+}
+
+a#view-template {
+	margin-top:2px;
+}
 
 /* -------------------------------------------------- 
    Table of Contents
