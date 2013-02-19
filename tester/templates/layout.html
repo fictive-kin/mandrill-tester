@@ -9,7 +9,7 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title>Welcome to Foundation</title>
+  <title>Mandrill Tester: {% block title %}{% endblock %}</title>
   
   <!-- Included CSS Files (Uncompressed) -->
   <!--
@@ -32,7 +32,9 @@
   </div>
 
   <div class="row">
-
+    <div class="twelve columns">
+      {% block body %}{% endblock %}
+    </div>
   </div>
   
   <!-- Included JS Files (Compressed) -->

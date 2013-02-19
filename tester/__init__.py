@@ -9,7 +9,7 @@ Mandrill Tester Web App
 :copyright: (c) 2013 by Fictive Kin.
 """
 
-from flask import Flask
+from flask import Flask, session
 import os
 from os.path import dirname
 
@@ -23,9 +23,11 @@ app.config.from_object('tester.app_settings.Config')
 # we load this here so controllers.py can access the app object
 from controllers import *
 
+
 @app.before_request
 def make_session_permanent():
     session.permanent = True
+
 
 # AWS Health Check
 @app.route('/health-check')

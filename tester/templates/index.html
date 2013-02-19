@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<form action="/render/" method="POST" target="_blank">
+	<label for="template-slug">Template slug</label>
+	<input type="text" name="template-slug" value="signup" placeholder="template-slug">
+
+	<label for="template-content">Template Content (JSON)</label>
+	<textarea rows="10" name="template-content" value="" placeholder="[]">[]</textarea>
+
+	<label for="template-content">Merge vars (JSON)</label>
+	<textarea rows="10" name="merge-vars" value="" placeholder="[]">
+[
+  { "name": "subject", "content": "DONE NOT DONE: Welcome!" },
+  { "name": "name", "content": "Ed Finkler" },
+  { "name": "header", "content": "Welcome to Done Not Done!" }
+]
+	</textarea>
+	<input type="submit" value="render" class="button radius">
+</form>
+
+{% endblock %}
