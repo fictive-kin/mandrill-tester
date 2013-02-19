@@ -2,6 +2,9 @@
 
 {% block title %}Home{% endblock %}
 
+{% block custom_head %}
+{% endblock %}
+
 {% block body %}
 
 <form action="/render/" method="POST" target="_blank" class="custom">
@@ -13,17 +16,33 @@
 	</select>
 
 	<label for="template-content">Template Content (JSON)</label>
-	<textarea rows="10" name="template-content" value="" placeholder="[]">[]</textarea>
+	<textarea name="template-content" id="templateContent" value="" placeholder="[]">[]</textarea>
 
 	<label for="template-content">Merge vars (JSON)</label>
-	<textarea rows="10" name="merge-vars" value="" placeholder="[]">
-[
+	<textarea name="merge-vars" id="mergeVars" value="" placeholder="[]">[
   { "name": "subject", "content": "DONE NOT DONE: Welcome!" },
   { "name": "name", "content": "Ed Finkler" },
   { "name": "header", "content": "Welcome to Done Not Done!" }
 ]
-	</textarea>
+</textarea>
 	<input type="submit" value="render" class="button radius">
 </form>
+
+	<!-- codemirror stuff -->
+	<script src="static/javascripts/codemirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="static/javascripts/codemirror/lib/codemirror.css">
+	<script src="static/javascripts/codemirror/mode/javascript/javascript.js"></script>
+	<script src="static/javascripts/codemirror/addon/edit/matchbrackets.js"></script>
+	<script>
+	var opts = {
+		'mode':{'name':'javascript','json':true},
+		'lineNumbers':true,
+		'matchBrackets': true,
+	}
+	var myCodeMirror1 = CodeMirror.fromTextArea(document.getElementById('templateContent'), opts);
+	var myCodeMirror2 = CodeMirror.fromTextArea(document.getElementById('mergeVars'), opts);
+	</script>
+
+
 
 {% endblock %}

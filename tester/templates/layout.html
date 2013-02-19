@@ -10,17 +10,20 @@
   <meta name="viewport" content="width=device-width" />
 
   <title>Mandrill Tester: {% block title %}{% endblock %}</title>
-  
+
   <!-- Included CSS Files (Uncompressed) -->
   <!--
   <link rel="stylesheet" href="static/stylesheets/foundation.css">
   -->
-  
+
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="static/stylesheets/foundation.min.css">
   <link rel="stylesheet" href="static/stylesheets/app.css">
 
   <script src="static/javascripts/modernizr.foundation.js"></script>
+
+  {% block custom_head %}{% endblock %}
+
 </head>
 <body>
 
@@ -36,10 +39,10 @@
       {% block body %}{% endblock %}
     </div>
   </div>
-  
+
   <!-- Included JS Files (Compressed) -->
   <script src="static/javascripts/foundation.min.js"></script>
-  
+
   <!-- Initialize JS Plugins -->
   <script src="static/javascripts/app.js"></script>
 
