@@ -1,0 +1,5 @@
+app_settings.py
+*.pyc
+venv
+.DS_Store
+.idea/
