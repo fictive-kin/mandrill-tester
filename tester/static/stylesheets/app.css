@@ -4,6 +4,10 @@ textarea {
 	font-family: monospace;
 }
 
+.CodeMirror {
+	height: 200px;
+}
+
 #template-viewer .CodeMirror {
 	min-height:400px;
 	height:100%;
