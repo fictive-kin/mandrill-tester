@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block custom_head %}
+<link rel="stylesheet" href="static/javascripts/codemirror/lib/codemirror.css">
 {% endblock %}
 
 {% block body %}
@@ -21,6 +22,34 @@
 		</div>
 	</div>
 
+	<fieldset>
+		<legend>Sending</legend>
+		<div class="row">
+			<div class="one mobile-one columns">
+				<label for="from-email" class="right inline">From</label>
+			</div>
+			<div class="five mobile-three columns">
+				<input class="inline" type="email" name="from-email" value="support@donenotdone.com">
+			</div>
+			<div class="one mobile-one columns">
+				<label for="to-email" class="right inline">To</label>
+			</div>
+			<div class="five mobile-three columns">
+				<input class="inline" type="email" name="to-email" value="coj@funkatron.com">
+			</div>
+		</div>
+		<div class="row">
+			<div class="one mobile-one columns">
+				<label for="subject" class="right inline">Subject</label>
+			</div>
+			<div class="eleven mobile-three columns">
+				<input class="inline" type="text" name="subject" value="A neat testing email from Done Not Done">
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Template vars</legend>
 
 	<label for="template-content">Template Content (JSON)</label>
 	<textarea name="template-content" id="templateContent" value="" placeholder="[]">[]</textarea>
@@ -32,7 +61,16 @@
   { "name": "header", "content": "Welcome to Done Not Done!" }
 ]
 </textarea>
-	<input type="submit" value="render" class="button radius">
+	</fieldset>
+
+	<div class="row">
+		<div class="six columns">
+			<input type="submit" name="action" value="render" class="button radius">
+		</div>
+		<div class="six columns right">
+			<input type="submit" name="action" value="send" class="button radius alert">
+		</div>
+	</div>
 </form>
 
 {% endblock %}
@@ -41,7 +79,6 @@
 {% block custom_footer %}
 	<!-- codemirror stuff -->
 	<script src="static/javascripts/codemirror/lib/codemirror.js"></script>
-	<link rel="stylesheet" href="static/javascripts/codemirror/lib/codemirror.css">
 	<script src="static/javascripts/codemirror/mode/javascript/javascript.js"></script>
 	<script src="static/javascripts/codemirror/addon/edit/matchbrackets.js"></script>
 	<script>
