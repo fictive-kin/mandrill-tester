@@ -32,7 +32,17 @@ You should now be able to install the Mandrill Tester application with the follo
 
 ## Use
 
+### Rendering a template
+
 1. Pick the **Template slug** with an existing template slug on your Mandrill account
 2. Fill in any **Template content** for editable sections. If none, leave as `[]`
 3. Fill in any **Merge vars** as JSON
 4. Hit **Render**
+
+### Sending an email through a template
+
+1. Pick the **Template slug** with an existing template slug on your Mandrill account
+2. Enter the to and from addresses, and the subject
+3. Fill in any **Template content** for editable sections. If none, leave as `[]`
+4. Fill in any **Merge vars** as JSON
+5. Hit **Send**
