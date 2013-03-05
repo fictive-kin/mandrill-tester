@@ -5,7 +5,16 @@ textarea {
 }
 
 .CodeMirror {
+	border: 1px solid #CCC;
+	background-color: #FFFFEE;
 	height: 200px;
+	max-width:960px;
+}
+
+.CodeMirror-scroll {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 #template-viewer .CodeMirror {
